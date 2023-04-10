@@ -100,11 +100,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
-                android:background="@drawable/btn_bg"
-                android:backgroundTint="@color/maincolor"
+                android:background="@drawable/gradient_background"
                 android:text="Sign up"
                 android:textColor="@color/white"
-
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="@+id/button_signin"
                 app:layout_constraintStart_toStartOf="@+id/button_signin"
