@@ -93,7 +93,7 @@
                 android:layout_marginTop="12dp"
                 android:singleLine="false"
                 android:text="Forgot Password"
-                android:textColor="@color/forgotpw"
+                android:textColor="@color/maincolor"
                 app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
