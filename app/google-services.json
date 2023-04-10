@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "20483130061",
+    "project_id": "e-mentor-cbab7",
+    "storage_bucket": "e-mentor-cbab7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20483130061:android:d91ad3e4c41ba858e89f84",
+        "android_client_info": {
+          "package_name": "com.example.e_mentor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "20483130061-apipl15nq87tfvgjhhekh9854ad3fr8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA423XRy_tXZtBhn4U_QxUDOCPnO8pcoB4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "20483130061-apipl15nq87tfvgjhhekh9854ad3fr8f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

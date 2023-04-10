@@ -1,0 +1,30 @@
+<resources>
+
+<!--    <style name="Widget.Theme.EMentor.ButtonBar.Fullscreen" parent="">-->
+<!--        <item name="android:background">@color/black_overlay</item>-->
+<!--        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>-->
+<!--    </style>-->
+    <style name="effortless_">
+        <item name="android:textSize">22sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textColor">#131313</item>
+    </style>
+    <style name="headsize">
+        <item name="android:text">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+
+    </style>
+    <style name="subsize">
+        <item name="android:text">14sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+</resources>
