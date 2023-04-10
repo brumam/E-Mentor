@@ -1,0 +1,159 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/illustration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:src="@drawable/otpimg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/check_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center_vertical"
+                android:lineSpacingExtra="0sp"
+                android:text="Check Email For OTP"
+                android:textAppearance="@style/headsize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.513"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/illustration" />
+
+            <TextView
+                android:id="@+id/to_reset_your_password"
+                android:layout_width="223dp"
+                android:layout_height="51dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:lineSpacingExtra="2sp"
+                android:text="To reset your password, please
+entire the 4 digit pin sent to your email."
+                android:textAppearance="@style/subsize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/check_email" />
+
+            <!-- OTP -->
+            <!-- OTP -->
+            <LinearLayout
+                android:id="@+id/otp_container"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="45dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/to_reset_your_password">
+
+                <EditText
+                    android:id="@+id/otp_char_1"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rectangle_1"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:layout_marginRight="28dp"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/otp_char_2"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rectangle_1"
+                    android:inputType="number"
+                    android:layout_marginRight="28dp"
+                    android:maxLength="1"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/otp_char_3"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rectangle_1"
+                    android:inputType="number"
+                    android:layout_marginRight="28dp"
+                    android:maxLength="1"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/otp_char_4"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rectangle_1"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/continue_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/gradient_background"
+                android:text="Continue"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/otp_container"
+                app:layout_constraintHorizontal_bias="0.518"
+                app:layout_constraintStart_toStartOf="@+id/otp_container"
+                app:layout_constraintTop_toBottomOf="@+id/otp_container" />
+
+            <TextView
+                android:id="@+id/didnt_get_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|center_vertical"
+                android:lineSpacingExtra="2sp"
+                android:layout_marginTop="20dp"
+                android:text="Didn't get the code?"
+                android:textAppearance="@style/subsize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/continue_button" />
+
+            <TextView
+                android:id="@+id/resend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:lineSpacingExtra="2sp"
+                android:text="Resend Code"
+                android:textAppearance="@style/subsize"
+                android:textColor="@color/maincolor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/didnt_get_code"
+                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintStart_toStartOf="@+id/didnt_get_code"
+                app:layout_constraintTop_toBottomOf="@+id/didnt_get_code"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
