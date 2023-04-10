@@ -8,7 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.e_mentor.Adapters.IntroSlidesAdapter;
 
 public class IntroSlidesActivity extends AppCompatActivity {
-
+//Comment
     private ViewPager viewPager;
     private IntroSlidesAdapter introSlidesAdapter;
 
