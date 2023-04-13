@@ -12,7 +12,7 @@
         android:centerColor="#009F6D"
         android:endColor="#073432"
         android:centerX="0"
-        android:endOffset="1"
+
         />
 
 
