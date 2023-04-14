@@ -19,25 +19,29 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/image"
-                android:src="@drawable/signupimg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
+                android:id="@+id/reg_userimg"
+                android:layout_width="126dp"
+                android:layout_height="109dp"
+                android:layout_marginStart="133dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="134dp"
+                android:background="@drawable/profshape"
+                android:backgroundTint="@color/cardview_dark_background"
+                android:contentDescription="Profile Picture"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-   />
+                app:layout_constraintTop_toTopOf="parent" />
+
 
             <TextView
                 android:id="@+id/sign_up"
+                style="@style/headsize"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sign Up"
-                style="@style/headsize"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image" />
+                app:layout_constraintTop_toBottomOf="@+id/reg_userimg" />
 
             <EditText
                 android:id="@+id/name_input"
@@ -162,16 +166,7 @@
                 app:layout_constraintStart_toEndOf="@+id/already_have"
                 app:layout_constraintTop_toTopOf="@+id/already_have" />
 
-            <View
-                android:id="@+id/home_indicator"
-                android:layout_width="143dp"
-                android:layout_height="5dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/newline"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/login_button" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
