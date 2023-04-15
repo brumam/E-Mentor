@@ -65,4 +65,12 @@ public class User {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+    public boolean isStudent() {
+        return "student".equalsIgnoreCase(userType);
+    }
+
+    public boolean isTeacher() {
+        return "teacher".equalsIgnoreCase(userType);
+    }
+
 }

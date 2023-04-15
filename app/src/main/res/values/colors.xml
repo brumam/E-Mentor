@@ -16,6 +16,7 @@
     <color name="maincolor">#073432</color>
     <color name="secondcolor">#009F6D</color>
     <color name="forgotpw">#4B65ED</color>
+    <color name="main_bg">#EFF3FB</color>
 
 
 </resources>

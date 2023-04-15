@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.e_mentor.Authentication.Login;
+import com.example.e_mentor.Authentication.SignUp;
+
 public class WelcomeActivity extends AppCompatActivity {
 
     @Override

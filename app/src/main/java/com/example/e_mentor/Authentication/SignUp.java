@@ -1,7 +1,4 @@
-package com.example.e_mentor;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.e_mentor.Authentication;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -15,12 +12,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.e_mentor.HomePage;
+import com.example.e_mentor.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -65,6 +68,9 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 registerUser(profilePicture);
+                Intent intent = new Intent(getApplicationContext(), HomePage.class);
+                startActivity(intent);
+                finish(); // Call finish to prevent user from going back to the Signup activity with the back button
             }
         });
 
@@ -159,12 +165,26 @@ public class SignUp extends AppCompatActivity {
                                             Toast.makeText(SignUp.this, "Registration successful.", Toast.LENGTH_SHORT).show();
                                             finish();
                                         }
+
+                                    }).addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            storageRef.delete();
+                                        }
                                     });
+
                                 }
                             });
 
                         } else {
-                            Toast.makeText(SignUp.this, "Registration failed.", Toast.LENGTH_SHORT).show();
+                            // User registration failed
+                            if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                // Check if the failure was due to email already being registered
+                                Toast.makeText(SignUp.this, "Your email is already registered.", Toast.LENGTH_SHORT).show();
+                            } else {
+                                // Some other type of registration failure occurred
+                                Toast.makeText(SignUp.this, "Registration failed.", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }
                 });

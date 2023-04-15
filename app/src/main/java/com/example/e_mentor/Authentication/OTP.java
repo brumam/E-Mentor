@@ -1,8 +1,10 @@
-package com.example.e_mentor;
+package com.example.e_mentor.Authentication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.e_mentor.R;
 
 public class OTP extends AppCompatActivity {
 
