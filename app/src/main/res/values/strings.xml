@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">E-Mentor</string>
     <string name="effortless_">Effortless Remote Learning</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="reset_password">Reset Password</string>
-
+    <string name="title_e_learning_platform">E-Mentor</string>
+    <string name="your_sessions">Your Sessions</string>
+    <string name="session_management_description">Manage and track your upcoming and completed tutoring sessions.</string>
+    <string name="start_learning">Start Learning</string>
 </resources>
