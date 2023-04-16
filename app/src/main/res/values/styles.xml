@@ -1,4 +1,4 @@
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
 
 <!--    <style name="Widget.Theme.EMentor.ButtonBar.Fullscreen" parent="">-->
 <!--        <item name="android:background">@color/black_overlay</item>-->
@@ -38,6 +38,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
     </style>
 
 

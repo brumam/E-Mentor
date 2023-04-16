@@ -11,16 +11,15 @@
         android:id="@+id/welcometxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="113dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="117dp"
+        android:layout_marginTop="16dp"
         android:text="Profile"
+        style="@style/headsize"
         android:textColor="@color/black"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/onoff"
+        app:layout_constraintHorizontal_bias="0.564"
+        app:layout_constraintStart_toStartOf="@+id/user_imageview"
         app:layout_constraintTop_toBottomOf="@+id/user_imageview" />
 
     <ImageView
@@ -49,34 +48,18 @@
         app:srcCompat="@drawable/main_person" />
 
     <TextView
-        android:id="@+id/last_name_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="132dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:text="lastname"
-        android:textAlignment="textEnd"
-        android:textColor="@color/black"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/name_textview"
-        app:layout_constraintTop_toBottomOf="@+id/welcometxt" />
-
-    <TextView
         android:id="@+id/name_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="firstname"
+        android:text="Name"
+        style="@style/headsize"
         android:textAlignment="textEnd"
         android:textColor="@color/black"
         android:textSize="34sp"
-        app:layout_constraintEnd_toStartOf="@+id/last_name_textview"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/user_imageview"
+        app:layout_constraintStart_toStartOf="@+id/user_imageview"
         app:layout_constraintTop_toBottomOf="@+id/welcometxt" />
 
     <ScrollView
@@ -117,6 +100,7 @@
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="166dp"
                     android:text="Email Address"
+                    style="@style/headsize"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -127,28 +111,34 @@
 
                 <TextView
                     android:id="@+id/email_imageview"
-                    android:layout_width="265dp"
+                    android:hint="Email Address"
+                    android:textAlignment="center"
+                    style="@style/subsize"
+                    app:drawableStartCompat="@drawable/main_email"
+                    android:layout_width="273dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="4dp"
                     android:background="@drawable/input_bg"
                     android:drawablePadding="10dp"
                     android:ems="10"
-                    android:hint="Email Address"
                     android:importantForAutofill="no"
-
                     android:minHeight="48dp"
                     android:paddingStart="20dp"
                     android:paddingTop="10dp"
                     android:paddingEnd="10dp"
                     android:paddingBottom="10dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
-                    app:drawableStartCompat="@drawable/main_email"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:gravity="center_vertical|start"
                     app:layout_constraintEnd_toEndOf="@+id/txtview_email"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/txtview_email"
-                    app:layout_constraintTop_toBottomOf="@+id/txtview_email" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtview_email"
+                    tools:ignore="RtlCompat" />
+
+
+
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -173,6 +163,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="166dp"
                     android:text="Password"
+                    style="@style/headsize"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -191,6 +182,7 @@
                     android:drawablePadding="10dp"
                     android:ems="10"
                     android:hint="Password"
+                    style="@style/subsize"
                     android:importantForAutofill="no"
                     android:inputType="textPassword"
                     android:minHeight="48dp"
@@ -198,8 +190,9 @@
                     android:paddingTop="10dp"
                     android:paddingEnd="10dp"
                     android:paddingBottom="10dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:gravity="center_vertical|start"
                     app:drawableStartCompat="@android:drawable/ic_lock_idle_lock"
                     app:layout_constraintEnd_toEndOf="@+id/txtview_password"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -208,14 +201,17 @@
                     tools:ignore="DuplicateSpeakableTextCheck" />
 
 
+
+
                 <Button
                     android:id="@+id/ed_sign_out"
                     android:layout_width="135dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/btn_bg"
+                    android:background="@drawable/gradient_background"
                     android:text="Sign Out"
+
                     android:textAllCaps="false"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="@+id/password_textview"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/ed_password"
@@ -227,10 +223,11 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="10dp"
-                    android:background="@drawable/btn_bg"
+                    android:background="@drawable/gradient_background"
                     android:text="Change Password"
+
                     android:textAllCaps="false"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     app:layout_constraintEnd_toStartOf="@+id/ed_sign_out"
                     app:layout_constraintStart_toStartOf="@+id/password_textview"
                     app:layout_constraintTop_toBottomOf="@+id/password_textview" />

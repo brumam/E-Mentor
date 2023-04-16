@@ -50,7 +50,7 @@
                 android:gravity="center_horizontal|center_vertical"
                 android:lineSpacingExtra="2sp"
                 android:text="To reset your password, please
-entire the 4 digit pin sent to your email."
+enter the 4 digit pin sent to your email."
                 android:textAppearance="@style/subsize"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -58,11 +58,13 @@ entire the 4 digit pin sent to your email."
 
             <!-- OTP -->
             <!-- OTP -->
+
+
             <LinearLayout
                 android:id="@+id/otp_container"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:layout_marginTop="45dp"
+                android:layout_marginTop="28dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -72,19 +74,20 @@ entire the 4 digit pin sent to your email."
                     android:id="@+id/otp_char_1"
                     android:layout_width="60dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/rectangle_1"
+                    android:layout_marginRight="28dp"
+                    android:background="@drawable/border_edit_text"
                     android:inputType="number"
                     android:maxLength="1"
-                    android:layout_marginRight="28dp"
                     android:textAlignment="center" />
+
 
                 <EditText
                     android:id="@+id/otp_char_2"
                     android:layout_width="60dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/rectangle_1"
-                    android:inputType="number"
                     android:layout_marginRight="28dp"
+                    android:background="@drawable/border_edit_text"
+                    android:inputType="number"
                     android:maxLength="1"
                     android:textAlignment="center" />
 
@@ -92,9 +95,9 @@ entire the 4 digit pin sent to your email."
                     android:id="@+id/otp_char_3"
                     android:layout_width="60dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/rectangle_1"
-                    android:inputType="number"
                     android:layout_marginRight="28dp"
+                    android:background="@drawable/border_edit_text"
+                    android:inputType="number"
                     android:maxLength="1"
                     android:textAlignment="center" />
 
@@ -102,12 +105,11 @@ entire the 4 digit pin sent to your email."
                     android:id="@+id/otp_char_4"
                     android:layout_width="60dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/rectangle_1"
+                    android:background="@drawable/border_edit_text"
                     android:inputType="number"
                     android:maxLength="1"
                     android:textAlignment="center" />
             </LinearLayout>
-
 
             <Button
                 android:id="@+id/continue_button"
@@ -153,6 +155,8 @@ entire the 4 digit pin sent to your email."
                 app:layout_constraintTop_toBottomOf="@+id/didnt_get_code"
                 app:layout_constraintVertical_bias="0.0"
                 tools:ignore="MissingConstraints" />
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

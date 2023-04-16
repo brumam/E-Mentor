@@ -60,7 +60,7 @@ public class SignUp extends AppCompatActivity {
         profilePicture = findViewById(R.id.reg_userimg);
 
         mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference("users");
+        mDatabase = FirebaseDatabase.getInstance().getReference("user");
 
         // ...
 
@@ -68,9 +68,7 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 registerUser(profilePicture);
-                Intent intent = new Intent(getApplicationContext(), HomePage.class);
-                startActivity(intent);
-                finish(); // Call finish to prevent user from going back to the Signup activity with the back button
+
             }
         });
 
@@ -148,6 +146,9 @@ public class SignUp extends AppCompatActivity {
                             byte[] data = baos.toByteArray();
 
                             UploadTask uploadTask = storageRef.putBytes(data);
+                            Intent intent = new Intent(getApplicationContext(), HomePage.class);
+                            startActivity(intent);
+                            finish(); // Call finish to prevent user from going back to the Signup activity with the back button
                             uploadTask.addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception exception) {

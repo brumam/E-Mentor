@@ -34,7 +34,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Login extends AppCompatActivity {
     private EditText email, password;
     private Button loginButton;
-    private TextView signupButton;
+    private TextView signupButton,forgotPw;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseUser mUser;
@@ -48,11 +48,12 @@ public class Login extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance().getReference("user");
-
         email = findViewById(R.id.log_input_email);
         password = findViewById(R.id.editTextTextPassword);
         loginButton = findViewById(R.id.button);
         signupButton = findViewById(R.id.sign_up_btn);
+        forgotPw = findViewById(R.id.textView9);
+
 
 
 
@@ -65,6 +66,14 @@ public class Login extends AppCompatActivity {
             }
         };
 
+        forgotPw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Login.this, ForgotPassword.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
