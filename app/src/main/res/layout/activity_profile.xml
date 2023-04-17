@@ -29,8 +29,7 @@
         android:layout_marginStart="133dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="134dp"
-        android:background="@drawable/profshape"
-        android:backgroundTint="@color/maincolor"
+        android:src="@drawable/main_person"
         android:contentDescription="ProfilePicture"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +44,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/main_person" />
+        app:srcCompat="@drawable/main_person"
+        android:background="@color/maincolor"/>
 
     <TextView
         android:id="@+id/name_textview"

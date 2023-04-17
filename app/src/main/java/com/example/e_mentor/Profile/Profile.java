@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.e_mentor.Authentication.Login;
 import com.example.e_mentor.Authentication.OTP;
 import com.example.e_mentor.BuildConfig;
+import com.example.e_mentor.CircleTransformation;
 import com.example.e_mentor.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -102,6 +103,18 @@ public class Profile extends AppCompatActivity {
 
                     mNameTextView.setText(name);
                     mEmailTextView.setText(email);
+
+
+                    String capitalizedText = "";
+                    String[] words = name.split("\\s+");
+                    for (String word : words) {
+                        if (word.length() > 0) {
+                            capitalizedText += Character.toUpperCase(word.charAt(0)) + word.substring(1) + " ";
+                        }
+                    }
+                    mNameTextView.setText(capitalizedText.trim());
+
+
                 }
             }
 
@@ -116,7 +129,7 @@ public class Profile extends AppCompatActivity {
         storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
-                Picasso.get().load(uri).into(mProfilePictureImageView);
+                Picasso.get().load(uri).transform(new CircleTransformation()).into(mProfilePictureImageView);
                 onfoff.setVisibility(View.INVISIBLE);
             }
         }).addOnFailureListener(new OnFailureListener() {
