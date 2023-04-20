@@ -58,7 +58,7 @@
                 android:paddingTop="10dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="10dp"
-                android:textColor="#C2C2C2"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="@+id/textView8"
                 app:layout_constraintHorizontal_bias="0.506"
                 app:layout_constraintStart_toStartOf="@+id/textView8"
@@ -81,7 +81,7 @@
                 android:paddingTop="10dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="10dp"
-                android:textColor="#C2C2C2"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="@+id/log_input_email"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/log_input_email"
@@ -138,6 +138,22 @@
                 app:layout_constraintHorizontal_bias="0.141"
                 app:layout_constraintStart_toEndOf="@+id/textView10"
                 app:layout_constraintTop_toBottomOf="@+id/button" />
+
+            <ProgressBar
+                android:id="@+id/loading_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateDrawable="@drawable/custom_progressbar"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.44" />
+
+
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

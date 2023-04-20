@@ -1,7 +1,9 @@
 package com.example.e_mentor.Authentication;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -39,7 +41,8 @@ public class Login extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseUser mUser;
     private DatabaseReference firebaseDatabase;
-    private ProgressBar progressBar;
+
+    private ProgressBar loadingSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +56,9 @@ public class Login extends AppCompatActivity {
         loginButton = findViewById(R.id.button);
         signupButton = findViewById(R.id.sign_up_btn);
         forgotPw = findViewById(R.id.textView9);
+        loadingSpinner = findViewById(R.id.loading_spinner);
 
-
+        int LOADING_SPINNER_DISPLAY_LENGTH = 3000; // 3000 milliseconds = 3 seconds
 
 
 
@@ -86,6 +90,14 @@ public class Login extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                loadingSpinner.setVisibility(View.VISIBLE); // Show the loading spinner
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        loadingSpinner.setVisibility(View.GONE); // Hide the loading spinner after 2 seconds
+                    }
+                }, LOADING_SPINNER_DISPLAY_LENGTH);
 
                 String userEmail = email.getText().toString().trim();
                 String userPassword = password.getText().toString().trim();
@@ -124,7 +136,18 @@ public class Login extends AppCompatActivity {
                                 }
 
                             } else {
+                                password.setError("Incorrect password");
+                                password.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.pwerror, 0);
+                                password.setTextColor(Color.RED);
 
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        password.setError(null);
+                                        password.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.confirm, 0);
+                                        password.setTextColor(Color.BLACK);
+                                    }
+                                }, 3000);
                                 Toast.makeText(Login.this, "Login failed", Toast.LENGTH_SHORT).show();
                             }
                         }

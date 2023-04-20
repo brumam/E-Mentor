@@ -5,6 +5,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,6 +33,7 @@ import com.squareup.picasso.Picasso;
     public class HomePage extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
         private BottomNavigationView bottomNavigationView;
+        private ImageButton profileBtn;
         private ImageView mProfilePictureImageView;
         private TextView mUserNameTextView;
 
@@ -47,6 +50,7 @@ import com.squareup.picasso.Picasso;
 
             // Set the default selected menu item
             bottomNavigationView.setSelectedItemId(R.id.home);
+            profileBtn = findViewById(R.id.button_change_profile);
 
 
             mProfilePictureImageView = findViewById(R.id.profile_picture);
@@ -62,7 +66,14 @@ import com.squareup.picasso.Picasso;
 
 
 
-
+            profileBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(HomePage.this,Profile.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
 
             // Retrieve user's name and profile picture from Firebase Database and set them in the corresponding Views
             mDatabase.addValueEventListener(new ValueEventListener() {
