@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.e_mentor.Authentication.Login;
 import com.example.e_mentor.Authentication.OTP;
 import com.example.e_mentor.BuildConfig;
-import com.example.e_mentor.CircleTransformation;
+import com.example.e_mentor.design.CircleTransformation;
 import com.example.e_mentor.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
