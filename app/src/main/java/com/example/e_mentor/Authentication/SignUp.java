@@ -93,6 +93,7 @@ public class SignUp extends AppCompatActivity {
             }
         });
     }
+
     // Handle file chooser activity result
     private void openFileChooser() {
         Intent intent = new Intent();
@@ -100,7 +101,6 @@ public class SignUp extends AppCompatActivity {
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(intent, PICK_IMAGE_REQUEST);
     }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

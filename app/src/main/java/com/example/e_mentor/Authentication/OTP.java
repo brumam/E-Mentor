@@ -47,7 +47,7 @@ public class OTP extends AppCompatActivity {
 
     private String email, otp;
     private CountDownTimer countDownTimer;
-    private TextView timerTextView;
+
 
 
     @Override
@@ -131,9 +131,6 @@ public class OTP extends AppCompatActivity {
         };
 
         countDownTimer.start();
-
-
-
     }
     // Configure the EditText fields for OTP input
     private void setupEditText(EditText current, EditText next) {
@@ -197,6 +194,7 @@ public class OTP extends AppCompatActivity {
         int otp = 1000 + random.nextInt(9000);
         return Integer.toString(otp);
     }
+
     // AsyncTask to send OTP code to user's email using
     private class SendPasswordResetEmailTask extends AsyncTask<String, Void, Void> {
         @Override
