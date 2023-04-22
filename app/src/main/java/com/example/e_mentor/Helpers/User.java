@@ -68,7 +68,9 @@ public class User {
     public boolean isStudent() {
         return "student".equalsIgnoreCase(userType);
     }
-
+    public boolean isAdmin() {
+        return "admin".equalsIgnoreCase(userType);
+    }
     public boolean isTeacher() {
         return "teacher".equalsIgnoreCase(userType);
     }

@@ -157,6 +157,7 @@ public class Login extends AppCompatActivity {
         });
     }
 
+    // Checks if the user is already signed in, and if so, updates the UI and finishes the activity
     @Override
     protected void onResume() {
         super.onResume();
@@ -169,7 +170,7 @@ public class Login extends AppCompatActivity {
         }
     }
 
-
+    // Navigates to the HomePage activity with the current user's email
     public void updateUI(FirebaseUser currentUser) {
         Intent homePageIntent = new Intent(getApplicationContext(), HomePage.class);
         homePageIntent.putExtra("email", currentUser.getEmail());

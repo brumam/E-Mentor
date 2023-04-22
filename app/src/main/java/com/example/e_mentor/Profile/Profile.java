@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,10 +17,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.e_mentor.Authentication.Login;
 import com.example.e_mentor.Authentication.OTP;
 import com.example.e_mentor.BuildConfig;
+import com.example.e_mentor.HomePage;
+import com.example.e_mentor.Module.Recycler;
 import com.example.e_mentor.design.CircleTransformation;
 import com.example.e_mentor.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -43,7 +47,10 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 
-public class Profile extends AppCompatActivity {
+public class Profile extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+
+    private BottomNavigationView bottomNavigationView;
+
     private TextView nameTxtView;
     private TextView emailTxtView, passwordTxtView;
     private ImageView userImageView;
@@ -84,6 +91,9 @@ public class Profile extends AppCompatActivity {
         ed_pass = findViewById(R.id.ed_password);
         signOutButton = findViewById(R.id.ed_sign_out);
 
+        bottomNavigationView = findViewById(R.id.bottom_nav_bar);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+        bottomNavigationView.setSelectedItemId(R.id.profile);
 
         // Get current user's ID
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -200,6 +210,34 @@ public class Profile extends AppCompatActivity {
             }
 
             return null;
+        }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                // Handle the Home menu item click
+                Intent homeIntent = new Intent(getApplicationContext(), HomePage.class);
+                startActivity(homeIntent);
+                return true;
+            case R.id.explore:
+                // Handle the Explore menu item click
+                Intent profileIntent = new Intent(getApplicationContext(), Recycler.class);
+                startActivity(profileIntent);
+                return true;
+            case R.id.e_mentor:
+                // Handle the E-Mentor menu item click
+                return true;
+            case R.id.learning_hub:
+                // Handle the Learning Hub menu item click
+                return true;
+            case R.id.profile:
+                // Handle the Profile menu item click
+
+                return true;
+            default:
+                return false;
         }
     }
 }

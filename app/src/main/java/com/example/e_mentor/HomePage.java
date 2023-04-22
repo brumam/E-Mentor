@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.e_mentor.Module.Recycler;
 import com.example.e_mentor.Profile.Profile;
 import com.example.e_mentor.design.CircleTransformation;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -33,7 +35,9 @@ import com.squareup.picasso.Picasso;
     public class HomePage extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
         private BottomNavigationView bottomNavigationView;
+        private Button exploreBtn;
         private ImageButton profileBtn;
+
         private ImageView mProfilePictureImageView;
         private TextView mUserNameTextView;
 
@@ -51,7 +55,7 @@ import com.squareup.picasso.Picasso;
             // Set the default selected menu item
             bottomNavigationView.setSelectedItemId(R.id.home);
             profileBtn = findViewById(R.id.button_change_profile);
-
+            exploreBtn = findViewById(R.id.start_learnbtn);
 
             mProfilePictureImageView = findViewById(R.id.profile_picture);
             mUserNameTextView = findViewById(R.id.user_name);
@@ -61,11 +65,18 @@ import com.squareup.picasso.Picasso;
             mDatabase = FirebaseDatabase.getInstance().getReference("user").child(userId);
 
 
-            // Example hardcoded text
+
             // Retrieve user's name from Firebase Database and set it in the corresponding TextView with capitalized words
 
 
-
+            exploreBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(HomePage.this, Recycler.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
             profileBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -121,6 +132,8 @@ import com.squareup.picasso.Picasso;
                     return true;
                 case R.id.explore:
                     // Handle the Explore menu item click
+                    Intent explore = new Intent(getApplicationContext(), Recycler.class);
+                    startActivity(explore);
                     return true;
                 case R.id.e_mentor:
                     // Handle the E-Mentor menu item click

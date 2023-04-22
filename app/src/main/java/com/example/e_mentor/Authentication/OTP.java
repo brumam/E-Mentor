@@ -79,7 +79,7 @@ public class OTP extends AppCompatActivity {
 
         verifyButton = findViewById(R.id.continue_button);
         resendCodeButton = findViewById(R.id.resend);
-
+        // Handle the resend code button click
         resendCodeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,7 +97,7 @@ public class OTP extends AppCompatActivity {
             }
         });
 
-
+        // Handle the verify button click
         verifyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,6 +117,8 @@ public class OTP extends AppCompatActivity {
                 }
             }
         });
+
+        // Start and handle the OTP resend countdown timer
         countDownTimer = new CountDownTimer(60000, 1000) {
             public void onTick(long millisUntilFinished) {
                 long secondsRemaining = millisUntilFinished / 1000;
@@ -133,6 +135,7 @@ public class OTP extends AppCompatActivity {
 
 
     }
+    // Configure the EditText fields for OTP input
     private void setupEditText(EditText current, EditText next) {
         current.addTextChangedListener(new TextWatcher() {
             @Override
@@ -159,7 +162,7 @@ public class OTP extends AppCompatActivity {
             return false;
         });
     }
-
+    // Configure the last EditText field for OTP input
     private void setupLastEditText(EditText editText) {
         editText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -188,13 +191,13 @@ public class OTP extends AppCompatActivity {
         });
     }
 
-
+    // Generate a random 4-digit OTP code
     private String generateOtp() {
         Random random = new Random();
         int otp = 1000 + random.nextInt(9000);
         return Integer.toString(otp);
     }
-
+    // AsyncTask to send OTP code to user's email using
     private class SendPasswordResetEmailTask extends AsyncTask<String, Void, Void> {
         @Override
         protected Void doInBackground(String... strings) {

@@ -37,7 +37,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 } else {
                     // User is not signed in, start IntroSlidesActivity or Login
                     Intent mainIntent = new Intent(SplashScreenActivity.this, IntroSlidesActivity.class);
-                    // You can also use Login.class instead of IntroSlidesActivity.class if you want to skip the intro slides
+
                     startActivity(mainIntent);
                 }
                 SplashScreenActivity.this.finish();

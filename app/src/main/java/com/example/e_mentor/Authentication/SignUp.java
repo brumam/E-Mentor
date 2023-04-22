@@ -51,6 +51,7 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         // BIND / INITIATE VARIABLES
+        // Initialize UI components and variables
         mNameInput = findViewById(R.id.name_input);
         mEmailInput = findViewById(R.id.email_input);
         mPasswordInput = findViewById(R.id.password_input);
@@ -59,11 +60,12 @@ public class SignUp extends AppCompatActivity {
         mLoginButton = findViewById(R.id.login_button);
         profilePicture = findViewById(R.id.reg_userimg);
 
+        // Initiate Firebase Authentication and Database
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference("user");
 
-        // ...
 
+        // Handle the sign up button click
         mSignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +74,7 @@ public class SignUp extends AppCompatActivity {
             }
         });
 
+        // Handle the login button click and redirect to Login activity
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,6 +85,7 @@ public class SignUp extends AppCompatActivity {
             }
         });
 
+        // Handle the profile picture click and open file chooser
         profilePicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,13 +93,14 @@ public class SignUp extends AppCompatActivity {
             }
         });
     }
-
+    // Handle file chooser activity result
     private void openFileChooser() {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(intent, PICK_IMAGE_REQUEST);
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -124,6 +129,8 @@ public class SignUp extends AppCompatActivity {
             return;
         }
 
+        // Register new user and store their details in Firebase
+        // Upload profile picture to Firebase Storage, update user's profilePictureUrl and navigate to HomePage
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
