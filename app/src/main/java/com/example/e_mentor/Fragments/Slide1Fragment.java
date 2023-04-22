@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
@@ -17,7 +16,7 @@ import com.example.e_mentor.R;
 public class Slide1Fragment extends Fragment {
 
     public Slide1Fragment() {
-        // Required empty public constructor
+        
     }
 
     @Nullable
