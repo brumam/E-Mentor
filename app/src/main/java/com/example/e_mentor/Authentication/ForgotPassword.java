@@ -22,20 +22,14 @@ import com.google.firebase.auth.FirebaseAuth;
 public class ForgotPassword extends AppCompatActivity {
 
     private static final String TAG = "ForgotPassword";
-
     private EditText mEmailField;
-
     private FirebaseAuth mAuth;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
-
         mAuth = FirebaseAuth.getInstance();
-
         mEmailField = findViewById(R.id.email_field);
-
         Button sendMailButton = findViewById(R.id.send_mail_button);
         sendMailButton.setOnClickListener(new View.OnClickListener() {
             @Override

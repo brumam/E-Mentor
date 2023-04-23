@@ -16,7 +16,7 @@ import com.example.e_mentor.R;
 public class Slide1Fragment extends Fragment {
 
     public Slide1Fragment() {
-        
+
     }
 
     @Nullable

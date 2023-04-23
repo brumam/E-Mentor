@@ -24,9 +24,6 @@
             android:name=".Module.ModuleDetails"
             android:exported="false" />
         <activity
-            android:name=".ModuleAdapter"
-            android:exported="false" />
-        <activity
             android:name=".Module.AddNewModule"
             android:exported="false" />
         <activity

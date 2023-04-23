@@ -21,8 +21,6 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-
-
         int SPLASH_DISPLAY_LENGTH = 3000; // 3000 milliseconds = 3 seconds
 
         new Handler().postDelayed(new Runnable() {

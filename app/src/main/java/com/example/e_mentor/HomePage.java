@@ -30,8 +30,6 @@ import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 
-
-
     public class HomePage extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
         private BottomNavigationView bottomNavigationView;
@@ -56,10 +54,8 @@ import com.squareup.picasso.Picasso;
             bottomNavigationView.setSelectedItemId(R.id.home);
             profileBtn = findViewById(R.id.button_change_profile);
             exploreBtn = findViewById(R.id.start_learnbtn);
-
             mProfilePictureImageView = findViewById(R.id.profile_picture);
             mUserNameTextView = findViewById(R.id.user_name);
-
             mAuth = FirebaseAuth.getInstance();
             String userId = mAuth.getCurrentUser().getUid();
             mDatabase = FirebaseDatabase.getInstance().getReference("user").child(userId);
@@ -67,8 +63,6 @@ import com.squareup.picasso.Picasso;
 
 
             // Retrieve user's name from Firebase Database and set it in the corresponding TextView with capitalized words
-
-
             exploreBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

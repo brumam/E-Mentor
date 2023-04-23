@@ -43,6 +43,7 @@ public class Recycler extends AppCompatActivity implements BottomNavigationView.
 
     // Call List array for Module Helper Class
     List<Module> moduleList = new ArrayList<>();
+    private List<Module> filteredModuleList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -218,7 +219,7 @@ public class Recycler extends AppCompatActivity implements BottomNavigationView.
 
 
 
-    private List<Module> filteredModuleList;
+
 
 
 
