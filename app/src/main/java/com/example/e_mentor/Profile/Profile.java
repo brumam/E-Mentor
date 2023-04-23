@@ -10,15 +10,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.e_mentor.Authentication.Login;
 import com.example.e_mentor.Authentication.OTP;
-import com.example.e_mentor.BuildConfig;
 import com.example.e_mentor.HomePage;
 import com.example.e_mentor.Module.Recycler;
-import com.example.e_mentor.design.CircleTransformation;
 import com.example.e_mentor.R;
+import com.example.e_mentor.design.CircleTransformation;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -34,9 +35,12 @@ import com.google.firebase.storage.StorageReference;
 import com.sendgrid.Content;
 import com.sendgrid.Email;
 import com.sendgrid.Mail;
+import com.sendgrid.SendGrid;
 import com.squareup.picasso.Picasso;
+
 import java.io.IOException;
 import java.util.Random;
+
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
@@ -190,11 +194,12 @@ public class Profile extends AppCompatActivity implements BottomNavigationView.O
 
             OkHttpClient client = new OkHttpClient();
             MediaType mediaType = MediaType.parse("application/json");
+            SendGrid sg = new SendGrid(System.getenv("SENDGRID_API_KEY"));
             try {
                 RequestBody body = RequestBody.create(mediaType, mail.build());
                 okhttp3.Request request = new okhttp3.Request.Builder()
                         .url("https://api.sendgrid.com/v3/mail/send")
-                        .addHeader("Authorization", "Bearer " + BuildConfig.SENDGRID_API_KEY)
+                        .addHeader("Authorization", "Bearer " + sg)
                         .addHeader("Content-Type", "application/json")
                         .post(body)
                         .build();

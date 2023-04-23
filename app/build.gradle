@@ -4,9 +4,7 @@ plugins {
 }
 
 android {
-    buildTypes.each {
-        it.buildConfigField 'String', 'SENDGRID_API_KEY', '"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"'
-    }
+
 
     useLibrary 'org.apache.http.legacy'
     namespace 'com.example.e_mentor'

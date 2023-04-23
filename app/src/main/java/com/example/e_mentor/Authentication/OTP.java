@@ -17,7 +17,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.e_mentor.BuildConfig;
 import com.example.e_mentor.Profile.ResetPassword;
 import com.example.e_mentor.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,6 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.sendgrid.Content;
 import com.sendgrid.Email;
 import com.sendgrid.Mail;
+import com.sendgrid.SendGrid;
 
 import java.io.IOException;
 import java.util.Random;
@@ -211,11 +211,12 @@ public class OTP extends AppCompatActivity {
 
             OkHttpClient client = new OkHttpClient();
             MediaType mediaType = MediaType.parse("application/json");
+            SendGrid sg = new SendGrid(System.getenv("SENDGRID_API_KEY"));
             try {
                 RequestBody body = RequestBody.create(mediaType, mail.build());
                 okhttp3.Request request = new okhttp3.Request.Builder()
                         .url("https://api.sendgrid.com/v3/mail/send")
-                        .addHeader("Authorization", "Bearer " + BuildConfig.SENDGRID_API_KEY)
+                        .addHeader("Authorization", "Bearer " + sg)
                         .addHeader("Content-Type", "application/json")
                         .post(body)
                         .build();
