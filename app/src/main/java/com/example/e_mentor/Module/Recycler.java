@@ -217,10 +217,4 @@ public class Recycler extends AppCompatActivity implements BottomNavigationView.
     }
 
 
-
-
-
-
-
-
 }

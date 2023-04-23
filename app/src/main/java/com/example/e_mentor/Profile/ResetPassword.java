@@ -26,13 +26,10 @@ public class ResetPassword extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
-
         mAuth = FirebaseAuth.getInstance();
-
         newPasswordEditText = findViewById(R.id.new_pw);
         confirmPasswordEditText = findViewById(R.id.confirm_pw);
         resetPasswordButton = findViewById(R.id.sign_up_button);
-
         resetPasswordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,17 +40,14 @@ public class ResetPassword extends AppCompatActivity {
     private void resetPassword() {
         String newPassword = newPasswordEditText.getText().toString().trim();
         String confirmPassword = confirmPasswordEditText.getText().toString().trim();
-
         if (TextUtils.isEmpty(newPassword) || TextUtils.isEmpty(confirmPassword)) {
             Toast.makeText(ResetPassword.this, "Both fields are required", Toast.LENGTH_SHORT).show();
             return;
         }
-
         if (!newPassword.equals(confirmPassword)) {
             Toast.makeText(ResetPassword.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
             return;
         }
-
         if (mAuth.getCurrentUser() != null) {
             mAuth.getCurrentUser().updatePassword(newPassword)
                     .addOnCompleteListener(task -> {
@@ -70,6 +64,4 @@ public class ResetPassword extends AppCompatActivity {
             Toast.makeText(ResetPassword.this, "User not found", Toast.LENGTH_SHORT).show();
         }
     }
-
-
 }

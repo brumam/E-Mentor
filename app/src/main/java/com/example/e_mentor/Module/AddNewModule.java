@@ -59,6 +59,7 @@ public class AddNewModule extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Modules");
         mModuleImage = findViewById(R.id.imageButton);
         mModuleName = findViewById(R.id.postTitleEt);
+
         mModuleDesc = findViewById(R.id.descriptionEt);
         mSubmitButton = findViewById(R.id.submitPost);
 

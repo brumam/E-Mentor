@@ -10,10 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.e_mentor.Authentication.Login;
 import com.example.e_mentor.Authentication.OTP;
 import com.example.e_mentor.BuildConfig;
@@ -37,10 +35,8 @@ import com.sendgrid.Content;
 import com.sendgrid.Email;
 import com.sendgrid.Mail;
 import com.squareup.picasso.Picasso;
-
 import java.io.IOException;
 import java.util.Random;
-
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
